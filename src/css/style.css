@@ -1,0 +1,268 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+html {
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+  src: local("Open Sans"), local("OpenSans"), url("../fonts/opensans/opensans.woff2") format("woff2"), url("../fonts/opensans/opensans.woff") format("woff"), url("../fonts/opensans/opensans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+  src: local("Open Sans Italic"), local("OpenSans-Italic"), url("../fonts/opensans/opensansitalic.woff2") format("woff2"), url("../fonts/opensans/opensansitalic.woff") format("woff"), url("../fonts/opensans/opensansitalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+body {
+    font-family: 'Open Sans';
+    font-size: 24px;
+}
+
+.wrap {
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 -10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+}
+
+.suite {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 0;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-transition: -webkit-transform .5s linear;
+    transition: -webkit-transform .5s linear;
+    -o-transition: transform .5s linear;
+    transition: transform .5s linear;
+    transition: transform .5s linear, -webkit-transform .5s linear;
+    -webkit-box-shadow: 2px 3px 20px #000;
+    box-shadow: 2px 3px 20px #000;
+}
+
+.suite p:last-of-type {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#051937), color-stop(#004d7a), color-stop(#008793), color-stop(#00bf72), to(#a8eb12));
+    background-image: -o-linear-gradient(left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    z-index: 1;
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform .5s linear;
+    transition: -webkit-transform .5s linear;
+    -o-transition: transform .5s linear;
+    transition: transform .5s linear;
+    transition: transform .5s linear, -webkit-transform .5s linear;
+    -webkit-box-shadow: 2px 3px 20px #000;
+    box-shadow: 2px 3px 20px #000;
+}
+
+.card:hover .suite {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.card:hover .back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+
+.diamonds .suite::before {
+    content: "";
+    width: 25px;
+    height: 30px;
+    background-color: red;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    position: absolute;
+    top: 45px;
+    left: 15px;
+}
+
+.diamonds .suite::after {
+    content: "";
+    width: 25px;
+    height: 30px;
+    background-color: red;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+}
+
+.hearts .suite::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    -webkit-clip-path: polygon(50% 29%, 75% 0, 100% 30%, 83% 69%, 68% 83%, 50% 100%, 31% 83%, 17% 69%, 0 30%, 25% 0);
+    clip-path: polygon(50% 29%, 75% 0, 100% 30%, 83% 69%, 68% 83%, 50% 100%, 31% 83%, 17% 69%, 0 30%, 25% 0);
+    position: absolute;
+    top: 45px;
+    left: 15px;
+}
+
+.hearts .suite::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    -webkit-clip-path: polygon(50% 29%, 75% 0, 100% 30%, 83% 69%, 68% 83%, 50% 100%, 31% 83%, 17% 69%, 0 30%, 25% 0);
+    clip-path: polygon(50% 29%, 75% 0, 100% 30%, 83% 69%, 68% 83%, 50% 100%, 31% 83%, 17% 69%, 0 30%, 25% 0);
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.spades .suite::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    -webkit-clip-path: polygon(50% 0, 92% 43%, 90% 80%, 70% 88%, 60% 70%, 50% 100%, 40% 70%, 30% 88%, 10% 80%, 8% 43%);
+    clip-path: polygon(50% 0, 92% 43%, 90% 80%, 70% 88%, 60% 70%, 50% 100%, 40% 70%, 30% 88%, 10% 80%, 8% 43%);
+    position: absolute;
+    top: 45px;
+    left: 15px;
+}
+
+.spades .suite::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    -webkit-clip-path: polygon(50% 0, 92% 43%, 90% 80%, 70% 88%, 60% 70%, 50% 100%, 40% 70%, 30% 88%, 10% 80%, 8% 43%);
+    clip-path: polygon(50% 0, 92% 43%, 90% 80%, 70% 88%, 60% 70%, 50% 100%, 40% 70%, 30% 88%, 10% 80%, 8% 43%);
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.clubs .suite::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    -webkit-clip-path: polygon(45% 0, 55% 0, 60% 30%, 100% 35%, 100% 45%, 60% 60%, 50% 100%, 40% 60%, 0 45%, 0% 35%, 40% 30%);
+    clip-path: polygon(45% 0, 55% 0, 60% 30%, 100% 35%, 100% 45%, 60% 60%, 50% 100%, 40% 60%, 0 45%, 0% 35%, 40% 30%);
+    position: absolute;
+    top: 45px;
+    left: 15px;
+}
+
+.clubs .suite::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    -webkit-clip-path: polygon(45% 0, 55% 0, 60% 30%, 100% 35%, 100% 45%, 60% 60%, 50% 100%, 40% 60%, 0 45%, 0% 35%, 40% 30%);
+    clip-path: polygon(45% 0, 55% 0, 60% 30%, 100% 35%, 100% 45%, 60% 60%, 50% 100%, 40% 60%, 0 45%, 0% 35%, 40% 30%);
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
